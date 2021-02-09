@@ -10,18 +10,4 @@
 
 }
 
-.header {
-    grid-area: h;
-    background-color: blue;
-}
-
-.nav {
-    grid-area: n;
-    background-color: orangered;
-}
-
-.content {
-    grid-area: c;
-    background-color: aqua;
-}
 
