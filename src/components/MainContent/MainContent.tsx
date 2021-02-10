@@ -5,7 +5,7 @@ import MyPosts from "./MyPosts/MyPosts";
 
 const MainContent = () => {
     return (
-        <div className={s.content}>
+        <div>
             <div>
                 <img src="https://s1.1zoom.me/b5050/596/Killzone_Technics_444553_1920x1080.jpg" width="600"
                      height="auto"/>
