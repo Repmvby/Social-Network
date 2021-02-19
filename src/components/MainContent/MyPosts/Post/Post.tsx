@@ -1,12 +1,13 @@
 import React from "react";
 import s from './Post.module.css'
 
-export type PropsType = {
+export type PropsPostType = {
     message: string
     likesCount: number
+    id: number
 }
 
-const Post = (props:PropsType) => {
+const Post = (props:PropsPostType) => {
     return (
         <div className={`${s.item} ${s.active}`}>
             <img src='https://frankfurt.apollo.olxcdn.com/v1/files/79n559hic7ku3-KZ/image;s=1000x700'/>

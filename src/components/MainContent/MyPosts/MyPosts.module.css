@@ -3,3 +3,9 @@
 .item.active {
     color: gold;
 }
+.buttonStyle {
+    padding-bottom: 10px;
+}
+.textAreaStyle {
+    padding-top: 10px;
+}
