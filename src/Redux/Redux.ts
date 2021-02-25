@@ -2,6 +2,7 @@ import {DialogItemPropsType} from "../components/Dialogs/DialogItem/DialogItem"
 import {MessagePropsType} from "../components/Dialogs/Message/Message"
 import {PropsPostType} from "../components/MainContent/MyPosts/Post/Post"
 import {FriendType} from "../components/Nav/SideBar/SideBar"
+import { rerenderEntireTree } from "../render"
 
 export type stateType = {
     dialogPage: DialogPageType;
@@ -58,6 +59,27 @@ let state: stateType = {
 
 
     }
+}
+
+export let addNewPost = (newMessage:string) => {
+    let newPost:PropsPostType = {
+        id:5,
+        message: newMessage,
+        likesCount: 0
+    }
+    state.mainContentPage.postData.push(newPost)
+    rerenderEntireTree(state);
+
+}
+
+export let addNewMessage = (newComment: string) => {
+    let newMessage:MessagePropsType = {
+        id:89,
+        message: newComment,
+    }
+    state.dialogPage.messageData.push(newMessage)
+    rerenderEntireTree(state);
+
 }
 export default state
 

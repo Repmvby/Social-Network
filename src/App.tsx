@@ -11,10 +11,12 @@ import Settings from './components/Settings/Settings';
 import {MessagePropsType} from './components/Dialogs/Message/Message';
 import {DialogItemPropsType} from './components/Dialogs/DialogItem/DialogItem';
 import {PropsPostType} from './components/MainContent/MyPosts/Post/Post';
-import {stateType} from './Redux/Redux';
+import {addNewMessage, stateType} from './Redux/Redux';
 
 type statePropsType = {
     state: stateType;
+    addNewPost: (newMessage: string) => void;
+    addNewMessage: (newMessage: string) => void
 }
 
 
@@ -26,9 +28,12 @@ const App = (props: statePropsType) => {
                 <Nav friends={props.state.sideBar.friends}/>
                 <div className='app-wrapper-content'>
                     <Route path='/dialogs' component={() => <Dialogs dialogData={props.state.dialogPage.dialogData}
-                                                                     messageData={props.state.dialogPage.messageData}/>}/>
+                                                                     messageData={props.state.dialogPage.messageData}
+                                                                     addNewMessage = {props.addNewMessage}
+                    />}/>
                     <Route path='/mainContent'
-                           component={() => <MainContent postData={props.state.mainContentPage.postData}/>}/>
+                           component={() => <MainContent postData={props.state.mainContentPage.postData}
+                                                         addNewPost={props.addNewPost}/>}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/news' component={News}/>
                     <Route path='/settings' component={Settings}/>
